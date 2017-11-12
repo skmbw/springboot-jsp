@@ -24,7 +24,10 @@ public class DemoFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        LOGGER.info("URL SHI = [{}]", request.getServletPath());
+        LOGGER.info("URL getServletPath = [{}]", request.getServletPath());
+        LOGGER.info("URL getRequestURI = [{}]", request.getRequestURI());
+        LOGGER.info("URL getPathInfo = [{}]", request.getPathInfo());
+        LOGGER.info("URL getRequestURL = [{}]", request.getRequestURL());
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
